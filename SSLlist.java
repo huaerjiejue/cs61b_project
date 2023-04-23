@@ -1,10 +1,10 @@
 public class SSLlist {
     private static class IntNode{
         public int item;
-        public IntNode nest;
+        public IntNode next;
         public IntNode(int i, IntNode n){
             item = i;
-            nest = n;
+            next = n;
         }
     }
     private IntNode sentinel;
@@ -14,43 +14,58 @@ public class SSLlist {
         size = 0;
     }
 
+    public SSLlist(int x){
+        sentinel = new IntNode(63, null);
+        sentinel.next = new IntNode(x, null);
+        size = 1;
+
+    }
+
     public void addFirst(int x){
-        sentinel.nest = new IntNode(x, sentinel.nest);
+        sentinel.next = new IntNode(x, sentinel.next);
         size += 1;
     }
 
     public int getFirst(){
-        return sentinel.nest.item;
+        return sentinel.next.item;
     }
 
     public void addLast(int x){
         IntNode p = new IntNode(x, null);
         IntNode q = sentinel;
-        while(q.nest != null){
-            q = q.nest;
+        while(q.next != null){
+            q = q.next;
         }
-        q.nest = p;
+        q.next = p;
         size += 1;
     }
+
+    /**
+     * insert x into the position
+     * @param x
+     * @param position
+     * the position is the index of the list, but the first node is 0
+     */
     public void insert(int x, int position){
         IntNode p = new IntNode(x, null);
         IntNode q = sentinel;
-        for (int i = 0; i < position - 1; i++) {
-            q = q.nest;
+        for (int i = 0; i < position ; i++) {
+            q = q.next;
         }
-        p.nest = q.nest;
-        q.nest = p;
+        p.next = q.next;
+        q.next = p;
         size += 1;
     }
 
     public int size(){
-        return size;
+        return this.size;
     }
 
     public void items(){
         IntNode q = sentinel;
-        while(q.nest != null){
-            System.out.println(q.nest.item);
+        while(q.next != null){
+            System.out.println(q.next.item);
+            q = q.next;
         }
     }
 
@@ -62,7 +77,8 @@ public class SSLlist {
         test.addLast(30);
         test.insert(15, 2);
         test.items();
-        test.size();
+        System.out.println(test.size());
+
     }
 
 
