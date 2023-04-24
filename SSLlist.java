@@ -7,7 +7,7 @@ public class SSLlist {
             next = n;
         }
     }
-    private IntNode sentinel;
+    private final IntNode sentinel;
     private int size;
     public SSLlist(){
         sentinel = new IntNode(63, null);
@@ -77,6 +77,7 @@ public class SSLlist {
         test.addLast(30);
         test.insert(15, 2);
         test.items();
+        System.out.println(test.getFirst());
         System.out.println(test.size());
 
     }
