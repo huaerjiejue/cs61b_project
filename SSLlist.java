@@ -1,39 +1,42 @@
 public class SSLlist {
-    private static class IntNode{
+    private static class IntNode {
         public int item;
         public IntNode next;
-        public IntNode(int i, IntNode n){
+
+        public IntNode(int i, IntNode n) {
             item = i;
             next = n;
         }
     }
+
     private final IntNode sentinel;
     private int size;
-    public SSLlist(){
+
+    public SSLlist() {
         sentinel = new IntNode(63, null);
         size = 0;
     }
 
-    public SSLlist(int x){
+    public SSLlist(int x) {
         sentinel = new IntNode(63, null);
         sentinel.next = new IntNode(x, null);
         size = 1;
 
     }
 
-    public void addFirst(int x){
+    public void addFirst(int x) {
         sentinel.next = new IntNode(x, sentinel.next);
         size += 1;
     }
 
-    public int getFirst(){
+    public int getFirst() {
         return sentinel.next.item;
     }
 
-    public void addLast(int x){
+    public void addLast(int x) {
         IntNode p = new IntNode(x, null);
         IntNode q = sentinel;
-        while(q.next != null){
+        while (q.next != null) {
             q = q.next;
         }
         q.next = p;
@@ -42,14 +45,14 @@ public class SSLlist {
 
     /**
      * insert x into the position
+     *
      * @param x
-     * @param position
-     * the position is the index of the list, but the first node is 0
+     * @param position the position is the index of the list, but the first node is 0
      */
-    public void insert(int x, int position){
+    public void insert(int x, int position) {
         IntNode p = new IntNode(x, null);
         IntNode q = sentinel;
-        for (int i = 0; i < position ; i++) {
+        for (int i = 0; i < position; i++) {
             q = q.next;
         }
         p.next = q.next;
@@ -57,15 +60,32 @@ public class SSLlist {
         size += 1;
     }
 
-    public int size(){
+    public int size() {
         return this.size;
     }
 
-    public void items(){
+    public void items() {
         IntNode q = sentinel;
-        while(q.next != null){
+        while (q.next != null) {
             System.out.println(q.next.item);
             q = q.next;
+        }
+    }
+
+
+    public void addAdjacent(SSLlist L) {
+        for (int i = 0; i < L.size(); i++) {  //repeat L.size() times
+            IntNode q = sentinel.next;
+            while (q.next != null) {
+                if (q.item == q.next.item) {
+                    q.item = q.item * 2;
+                    q.next = q.next.next;
+                    size--;
+                } else {
+                    q = q.next;
+                }
+            }
+
         }
     }
 
@@ -73,15 +93,18 @@ public class SSLlist {
         SSLlist test = new SSLlist();
         test.addFirst(5);
         test.addFirst(10);
+        test.addFirst(10);
         test.addFirst(20);
         test.addLast(30);
-        test.insert(15, 2);
+        test.insert(15, 3);
         test.items();
         System.out.println(test.getFirst());
         System.out.println(test.size());
+        System.out.println("addAdjacent");
+        test.addAdjacent(test);
+        test.items();
 
     }
-
 
 
 }
