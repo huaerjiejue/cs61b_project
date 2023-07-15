@@ -7,5 +7,30 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/library-sp23/annotations-24.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JUnit5.8.1">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/library-sp23/junit-jupiter-5.8.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/library-sp23/junit-jupiter-api-5.8.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/library-sp23/opentest4j-1.2.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/library-sp23/junit-platform-commons-1.8.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/library-sp23/apiguardian-api-1.1.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/library-sp23/junit-jupiter-params-5.8.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/library-sp23/junit-jupiter-engine-5.8.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/library-sp23/junit-platform-engine-1.8.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
