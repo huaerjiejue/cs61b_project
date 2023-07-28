@@ -28,9 +28,12 @@ public class DoubleLinked<T> {
         sentinel.prev = sentinel.next;
     }
 
+
+
     public int size() {
         return size;
     }
+
 
     public void add_first(T item) {
         Node<T> new_node = new Node<>(item, sentinel.next, sentinel);
