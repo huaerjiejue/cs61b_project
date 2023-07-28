@@ -32,5 +32,21 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JUnit5.8.1">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/library-cs61b/junit-jupiter-5.8.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/library-cs61b/junit-jupiter-api-5.8.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/library-cs61b/opentest4j-1.2.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/library-cs61b/junit-platform-commons-1.8.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/library-cs61b/apiguardian-api-1.1.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/library-cs61b/junit-jupiter-params-5.8.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/library-cs61b/junit-jupiter-engine-5.8.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/library-cs61b/junit-platform-engine-1.8.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
